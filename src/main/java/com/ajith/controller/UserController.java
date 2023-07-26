@@ -3,6 +3,7 @@ package com.ajith.controller;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,13 +14,14 @@ import com.ajith.model.UserDtls;
 import com.ajith.repository.UserRepository;
 
 @Controller
+
 @RequestMapping("/user")
 public class UserController {
 
 	@Autowired
 	private UserRepository userRepo;
 
-	@ModelAttribute
+	@ModelAttribute 
 	private void userDetails(Model m, Principal p) {
 		String email = p.getName();
 		UserDtls user = userRepo.findByEmail(email);

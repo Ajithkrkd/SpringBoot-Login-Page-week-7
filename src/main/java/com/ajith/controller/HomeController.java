@@ -34,9 +34,6 @@ public class HomeController {
 
 	@PostMapping("/createUser")
 	public String createuser( @ModelAttribute UserDtls user, HttpSession session) {
-
-		
-
 		boolean f = userService.checkEmail(user.getEmail());
 		if(!user.checkvalid())
 		{

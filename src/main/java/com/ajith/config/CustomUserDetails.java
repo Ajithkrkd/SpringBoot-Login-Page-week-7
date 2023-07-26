@@ -27,6 +27,13 @@ public class CustomUserDetails implements UserDetails {
 		SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(user.getRole());
 		return Arrays.asList(simpleGrantedAuthority);
 	}
+	
+	
+	
+	@Override
+	public String toString() {
+		return "CustomUserDetails [user=" + user.getFullName() + "]";
+	}
 
 	@Override
 	public String getPassword() {
@@ -37,6 +44,10 @@ public class CustomUserDetails implements UserDetails {
 	@Override
 	public String getUsername() {
 				return user.getEmail();
+	}
+	
+	public String getFullname() {
+		return user.getFullName();
 	}
 
 	@Override

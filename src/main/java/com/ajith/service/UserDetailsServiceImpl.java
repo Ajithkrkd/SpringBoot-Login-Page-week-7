@@ -1,12 +1,13 @@
-	package com.ajith.config;
+	package com.ajith.service;
 	
 	import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.security.core.userdetails.UserDetails;
 	import org.springframework.security.core.userdetails.UserDetailsService;
 	import org.springframework.security.core.userdetails.UsernameNotFoundException;
 	import org.springframework.stereotype.Service;
-	
-	import com.ajith.model.UserDtls;
+
+import com.ajith.config.CustomUserDetails;
+import com.ajith.model.UserDtls;
 	import com.ajith.repository.UserRepository;
 	
 	@Service
